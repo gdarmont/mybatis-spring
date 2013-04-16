@@ -65,7 +65,7 @@ public class MyBatisCursorItemReader<T> extends AbstractItemCountingItemStreamIt
 	protected void doClose() throws Exception {
 		// Ensure that cursorList is closed, even if resultset is partially consumed.
 		cursorList.closeResultSetAndStatement();
-    sqlSession.close();
+		sqlSession.close();
 		cursorIterator = null;
 		cursorList = null;
 	}
