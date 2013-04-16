@@ -23,6 +23,7 @@ public class MyBatisCursorItemReader<T> extends AbstractItemCountingItemStreamIt
 	private String queryId;
 
 	private SqlSessionFactory sqlSessionFactory;
+	private SqlSession sqlSession;
 
 	private Map<String, Object> parameterValues;
 
@@ -49,7 +50,7 @@ public class MyBatisCursorItemReader<T> extends AbstractItemCountingItemStreamIt
 			parameters.putAll(parameterValues);
 		}
 
-		SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.SIMPLE);
+		sqlSession = sqlSessionFactory.openSession(ExecutorType.SIMPLE);
 		List<T> list = sqlSession.selectList(queryId, parameters);
 		if (!(list instanceof CursorList)) {
 			throw new IllegalStateException(
@@ -64,6 +65,7 @@ public class MyBatisCursorItemReader<T> extends AbstractItemCountingItemStreamIt
 	protected void doClose() throws Exception {
 		// Ensure that cursorList is closed, even if resultset is partially consumed.
 		cursorList.closeResultSetAndStatement();
+    sqlSession.close();
 		cursorIterator = null;
 		cursorList = null;
 	}
