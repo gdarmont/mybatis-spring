@@ -24,7 +24,7 @@
   </parent>
 
   <artifactId>mybatis-spring</artifactId>
-  <version>1.2.0-erdf-1-SNAPSHOT</version>
+  <version>1.2.0-erdf-1</version>
   <packaging>jar</packaging>
 
   <name>MyBatis-Spring</name>
@@ -72,7 +72,7 @@
     <url>http://git.sid.distribution.edf.fr/projects/OSS/repos/mybatis-spring/browse</url>
     <connection>scm:git:ssh://git@git.sid.distribution.edf.fr:7999/oss/mybatis-spring.git</connection>
     <developerConnection>scm:git:ssh://git@git.sid.distribution.edf.fr:7999/oss/mybatis-spring.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>mybatis-spring-1.2.0-erdf-1</tag>
   </scm>
   <issueManagement>
     <system>GitHub Issue Management</system>
