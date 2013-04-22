@@ -277,6 +277,13 @@
           <locales>en,es,zh_CN,ja</locales>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <arguments>-Pattach-sources</arguments>
+        </configuration>
+      </plugin>
     </plugins>
 
     <resources>
